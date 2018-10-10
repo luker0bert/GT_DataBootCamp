@@ -1,16 +1,10 @@
 # import necessary libraries
 import numpy as np
 import os
+from flask import render_template, jsonify, Flask
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session, load_only
 from sqlalchemy import create_engine, func, desc, inspect
-
-from flask import (
-    Flask,
-    render_template,
-    jsonify,
-    request,
-    redirect)
 
 ########################`#########################
 # Flask Setup
@@ -45,8 +39,7 @@ def __repr__(self):
 # Create a route that renders the index.html homepage template
 @app.route("/")
 def home():
-	print(render_template("index.html"))
-    return render_template("index.html")
+	return render_template('index.html')
 
 @app.route('/names')
 def names_list():
