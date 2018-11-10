@@ -27,7 +27,7 @@ from key_vault import (consumer_key,
 
 
 def init_browser():
-    executable_path = {"executable_path": "/Users/David W. Jones/class/chromedriver"}
+    executable_path = {"executable_path": "/anaconda3/bin/chromedriver"}
     return Browser("chrome", **executable_path, headless=False)
 
 
